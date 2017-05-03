@@ -1,2 +1,3 @@
-# jarbas
-source code of jarbas - fab lab's coffee bot
+# Jarbas
+
+Source code of Jarbas - Fab Lab's coffee bot.
