@@ -9,7 +9,28 @@ const char* PASSWORD = "PASSWORD";
 
 const char* HOST = "hooks.slack.com";
 const char* URL  = "URL";
-String PAYLOAD = String("{\"text\": \"@here Café quentinho na cafeteira!\", \"link_names\": 1}");
+String PAYLOAD = String("{\"text\": \"@here Café quentinho na cafeteira!\", \"link_names\": 1, \"attachments\":[{\"text\":\" \", \"image_url\":\"https://media2.giphy.com/media/687qS11pXwjCM/giphy.gif\"}]}");
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////AINDA PRECISA ADICIONAR UMA FUNCAO QUE ESCOLHE, ALEATORIAMENTE, UM DOS DEZ GIFS SELECIONADOS COM TAG "coffee",////
+////                              PORQUE EU NÃO SEI FAZER ISSOOOOOOOOOOO                                          //// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* const char *gifs[] = {
+        "https://media2.giphy.com/media/687qS11pXwjCM/giphy.gif",
+        "https://media.giphy.com/media/zJ8ldRaGLnHTa/giphy.gif",
+        "https://media.giphy.com/media/3o6Zt7efI3ruag4zEA/giphy.gif",
+        "https://media.giphy.com/media/3oFyDpRagf96Uz9rzO/giphy.gif",      
+        "https://media.giphy.com/media/3oKIPx16LFvftHPLiM/giphy.gif",
+        "https://media.giphy.com/media/zJ8ldRaGLnHTa/giphy.gif",
+        "https://media.giphy.com/media/Z6vszQ8Mweukw/giphy.gif",
+        "https://media.giphy.com/media/Q6joirtIBHUsw/giphy.gif",
+        "https://media.giphy.com/media/5Ztn33chuvutW/giphy.gif",
+        "https://media.giphy.com/media/3o6ZsYZtTSdFOdxPEY/giphy.gif"        
+        };
+
+*/
 
 ESP8266WiFiMulti wifi;
 
@@ -52,3 +73,4 @@ void loop() {
 
   delay(1000);
 }
+
