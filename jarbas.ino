@@ -22,7 +22,11 @@ void prepareCoffee() {
 
 void notifySlack() {
   HTTPClient client;
-  client.get('https://fablabjoinville-bot.herokuapp.com/coffee_gifs')
+
+  client.begin(HOST, HTTPS_PORT, String("AC:95:5A:58:B8:4E:0B:CD:B3:97:D2:88:68:F5:CA:C1:0A:81:E3:6E"));
+  client.addHeader("Content-Type", "application/x-www-form-urlencoded");
+  client.GET();
+  client.end();
 }
 
 void waitAndTurnOffCoffeeMachine() {
