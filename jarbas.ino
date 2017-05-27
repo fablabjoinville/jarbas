@@ -9,7 +9,6 @@ const char* PASSWORD = "PASSWORD";
 
 const char* HOST = "hooks.slack.com";
 const char* URL  = "URL";
-String PAYLOAD = String("{\"text\": \"@here Café quentinho na cafeteira!\", \"link_names\": 1}");
 
 ESP8266WiFiMulti wifi;
 
@@ -23,11 +22,7 @@ void prepareCoffee() {
 
 void notifySlack() {
   HTTPClient client;
-  
-  client.begin(HOST, HTTPS_PORT, URL, String("AC:95:5A:58:B8:4E:0B:CD:B3:97:D2:88:68:F5:CA:C1:0A:81:E3:6E"));
-  client.addHeader("Content-Type", "application/x-www-form-urlencoded");
-  client.POST(PAYLOAD);
-  client.end();
+  client.get('https://fablabjoinville-bot.herokuapp.com/coffee_gifs')
 }
 
 void waitAndTurnOffCoffeeMachine() {
