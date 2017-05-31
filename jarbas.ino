@@ -3,13 +3,9 @@
 
 #define RELAY D1
 
-const int   HTTPS_PORT = 443;
-const char* WIFI = "WIFI";
+const char* WIFI     = "WIFI";
 const char* PASSWORD = "PASSWORD";
-
-const char* HOST = "hooks.slack.com";
-const char* URL  = "URL";
-String PAYLOAD = String("{\"text\": \"@here Café quentinho na cafeteira!\", \"link_names\": 1}");
+const char* URL      = "URL";
 
 ESP8266WiFiMulti wifi;
 
@@ -24,9 +20,8 @@ void prepareCoffee() {
 void notifySlack() {
   HTTPClient client;
   
-  client.begin(HOST, HTTPS_PORT, URL, String("AC:95:5A:58:B8:4E:0B:CD:B3:97:D2:88:68:F5:CA:C1:0A:81:E3:6E"));
-  client.addHeader("Content-Type", "application/x-www-form-urlencoded");
-  client.POST(PAYLOAD);
+  client.begin(URL);
+  client.GET();
   client.end();
 }
 
