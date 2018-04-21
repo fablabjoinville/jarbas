@@ -25,12 +25,6 @@ void notifySlack() {
   client.end();
 }
 
-void waitAndTurnOffCoffeeMachine() {
-  delay(10 * 60 * 1000); // Wait 10 minutes.
-  digitalWrite(RELAY, LOW); // Turn off.
-  turnOff = true;
-}
-
 void setup() {
   wifi.addAP(WIFI, PASSWORD);
   pinMode(RELAY, OUTPUT);
@@ -42,7 +36,7 @@ void loop() {
 
   if (!turnOff && coffeeIsReady && wifi.run() == WL_CONNECTED) {
     notifySlack();
-    waitAndTurnOffCoffeeMachine();
+    turnOff = true;
   }
 
   delay(1000);
